@@ -25,6 +25,7 @@ def detect_collision(block1, block2):
         vel_1 = ((b1_mass - b2_mass) * b1_speed + 2 * b2_mass * b2_speed) / (b1_mass + b2_mass)
         vel_2 = ((b2_mass - b1_mass) * b2_speed + 2 * b1_mass * b1_speed) / (b1_mass + b2_mass)
 
+        # Speed is updated for both blocks
         block1.speed = vel_1
         block2.speed = vel_2
 
@@ -57,6 +58,7 @@ while running:
     block_1.draw_block()
     block_2.draw_block()
     
+    # Function to detect collision begins
     detect_collision(block_1, block_2)
 
     pygame.display.flip()
