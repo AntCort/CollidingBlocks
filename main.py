@@ -1,6 +1,22 @@
 import pygame
 import sys
-from setting import *
+from setting import (
+    SCREEN_WIDTH,
+    SCREEN_HEIGHT,
+    BACKGROUND_COLOR,
+    BLOCK_ONE_X,
+    BLOCK_ONE_Y,
+    BLOCK_ONE_SIZE,
+    BLOCK_ONE_SPEED,
+    BLOCK_ONE_COLOR,
+    BLOCK_ONE_MASS,
+    BLOCK_TWO_X,
+    BLOCK_TWO_Y,
+    BLOCK_TWO_SIZE,
+    BLOCK_TWO_SPEED,
+    BLOCK_TWO_COLOR,
+    BLOCK_TWO_MASS,
+)
 from blocks import Blocks
 
 # Initialize Pygame
