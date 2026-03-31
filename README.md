@@ -1,37 +1,36 @@
 # Colliding Blocks Simulation
 
-This is a simple Python simulation that recreates the 'Colliding Simulation' by 3Blue1Brown. It demonstrates the collision and physics interactions between two blocks. One block is stationary while the other moves towards it. Upon collision, the blocks exchange velocities based on their masses, simulating an elastic collision.
-
+A simple Python and Pygame simulation inspired by 3Blue1Brown’s colliding blocks example. The program models elastic collisions between two blocks with different masses and displays a collision counter in real time.
 
 ## Installation
 
-1. Ensure you have Python installed on your system. You can download it from [Python's official website](https://www.python.org/downloads/).
+1. Create and activate a virtual environment  
+2. Install dependencies:
 
-2. Install Pygame by running the following command:
+```bash
+pip install -r requirements.txt
+```
 
-## Usage
+## Run
 
-1. Run `main.py` to start the simulation.
+```bash
+python main.py
+```
 
-2. The program will open a window showing two blocks. The smaller block is stationary, and the larger block moves towards it.
+## Controls
 
-3. When the blocks collide, they exchange velocities based on their masses, simulating an elastic collision.
-
-4. The simulation will continue running until you close the window.
+- `R` → Reset simulation  
+- `ESC` → Exit  
 
 ## Files
 
-- `main.py`: Contains the main program logic, including the Pygame setup and the collision detection algorithm.
-- `blocks.py`: Defines the `Blocks` class, which represents the blocks in the simulation.
-- `setting.py`: Contains settings such as screen size, block sizes, speeds, colors, and masses.
+- `main.py` – main loop and program entry point  
+- `settings.py` – simulation constants  
+- `blocks.py` – block class  
+- `physics.py` – collision logic and block creation  
+- `ui.py` – rendering helpers  
 
-## Customization
+## Notes
 
-- You can customize the properties of the blocks (size, speed, color, mass) by modifying the constants in `setting.py`.
-- Adjust the simulation behavior by modifying the `update_position` method in `blocks.py` or the `detect_collision` function in `main.py`.
-
-
-## Future Plans
-
-- Add a test file (`test.py`) to test the functionality of the simulation.
-- Fix bug that allows the 2nd block to overlap over the 1st block when the mass is increased to a bigger amount. 
+- Block behavior can be adjusted in `settings.py`  
+- Collision handling is based on elastic collision equations
