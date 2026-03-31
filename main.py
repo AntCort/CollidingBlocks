@@ -61,6 +61,7 @@ block_1 = Blocks(surface=screen, x_pos=BLOCK_ONE_X, y_pos=BLOCK_ONE_Y, size=BLOC
 block_2 = Blocks(surface=screen, x_pos=BLOCK_TWO_X, y_pos=BLOCK_TWO_Y, size=BLOCK_TWO_SIZE, speed=BLOCK_TWO_SPEED, color=BLOCK_TWO_COLOR, mass=BLOCK_TWO_MASS)
 
 # Will keep running until user 'quits' program
+clock = pygame.time.Clock()
 running = True
 while running:
     for event in pygame.event.get():
@@ -86,7 +87,7 @@ while running:
     detect_collision(block_1, block_2)
 
     pygame.display.flip()
-    pygame.time.Clock().tick(60)  # Control frame rate to 60 FPS
+    clock.tick(60)  # Control frame rate to 60 FPS
 
 pygame.quit()
 sys.exit()
