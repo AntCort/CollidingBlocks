@@ -1,4 +1,4 @@
-SCREEN_WIDTH = 1200
+SCREEN_WIDTH = 1600
 SCREEN_HEIGHT = 800
 BACKGROUND_COLOR = (0, 0, 0)  # Black color as an RGB tuple
 

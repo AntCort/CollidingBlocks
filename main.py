@@ -22,28 +22,37 @@ def show_collision_count():
 
 # Checks if the blocks collide
 def detect_collision(block1, block2):
-    global COLLIDE_DETECT 
-    
-    if block1.get_rect().colliderect(block2.get_rect()):
+    global COLLIDE_DETECT
 
-        # Elastic collision equations
+    rect1 = block1.get_rect()
+    rect2 = block2.get_rect()
+
+    if rect1.colliderect(rect2):
+        # Save current speeds before updating them
         b1_speed, b2_speed = block1.speed, block2.speed
         b1_mass, b2_mass = block1.mass, block2.mass
 
+        # 1D elastic collision formulas
         vel_1 = ((b1_mass - b2_mass) * b1_speed + 2 * b2_mass * b2_speed) / (b1_mass + b2_mass)
         vel_2 = ((b2_mass - b1_mass) * b2_speed + 2 * b1_mass * b1_speed) / (b1_mass + b2_mass)
 
-        # Speed is updated for both blocks
         block1.speed = vel_1
         block2.speed = vel_2
         COLLIDE_DETECT += 1
 
-    # Checks if block 1 is out of bounds
+        # Separate blocks so the collision is not detected again immediately
+        overlap = rect1.right - rect2.left
+        if overlap > 0:
+            block1.x_pos -= overlap / 2
+            block2.x_pos += overlap / 2
+
     if block1.get_pos() <= 0:
+        block1.x_pos = 0
         block1.speed = -block1.speed
         COLLIDE_DETECT += 1
-    # Checks if block 2 is out of bounds
+
     if block2.get_pos() <= 0:
+        block2.x_pos = 0
         block2.speed = -block2.speed
         COLLIDE_DETECT += 1
     
