@@ -33,6 +33,5 @@ This is a simple Python simulation that recreates the 'Colliding Simulation' by 
 
 ## Future Plans
 
-- Add a collision counter to track the number of collisions detected.
 - Add a test file (`test.py`) to test the functionality of the simulation.
 - Fix bug that allows the 2nd block to overlap over the 1st block when the mass is increased to a bigger amount. 
